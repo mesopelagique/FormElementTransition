@@ -6,6 +6,8 @@ Animate a form object from one visual state to another — position, size, color
 
 ![demo](https://img.shields.io/badge/4D-v21%2B-blue)
 
+https://github.com/user-attachments/assets/5715d3e7-ef76-4474-88f5-6880873be8c2
+
 ## Classes
 
 A **4D component** exposing three classes under the `cs.hero` namespace, driven by the **form timer** (`SET TIMER` / `On Timer`, ~60 fps). Each one has its full reference in [`Documentation/Classes/`](Documentation/Classes/), also shown by the 4D code editor:
