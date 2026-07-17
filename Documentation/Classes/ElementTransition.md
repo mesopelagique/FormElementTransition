@@ -158,7 +158,9 @@ ACCEPT
 
 ### Description
 
-Cross-form hero transition. Every object of the current form whose **name matches** a captured state flies from that state to its natural place; objects with no match are untouched. Call it from the `On Load` event of the destination form:
+Cross-form hero transition. Every object of the current form whose **name matches** a captured state flies **from** that state **to** where it currently sits; objects with no match are untouched. Call it from the `On Load` event of the destination form, where the arriving objects are already at their natural place:
+
+> ⚠️ The direction is the whole point, and it is easy to get backwards. `heroFrom()` does **not** restore a snapshot — it uses the snapshot as the *starting* keyframe. To send objects back **to** a captured state, tween to it yourself: a keyframe may be an [`ElementState`](ElementState.md), so `animate($state.name).to($state).start()` over the collection is all it takes. `DEMO_Playground` does exactly that.
 
 ```4d
 If (Form.hero#Null)

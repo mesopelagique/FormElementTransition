@@ -70,6 +70,10 @@ End if
 
 ## Demos
 
+- **`DEMO_Playground`** — every knob, in one form. Click **Run**: the twelve [easing curves](Documentation/Classes/ElementAnimation.md#easing) race side by side over the same distance and the same duration, so you can actually *see* the difference; two swatches take the same blue → orange journey in `rgb` and in `hsv`; position, size, `cornerRadius` and `fontSize` each get a demo; and six dots stagger with `.delay()`. Click **Back**: the state `capture()`d on load *is* the destination — `.to($elementState)`, no coordinates written anywhere.
+
+<p align="center"><img src="Project/Sources/Forms/DEMO_Playground/form.png" width="560" alt="The playground demo form" /></p>
+
 - **`DEMO`** — single form: each click on **Toggle** plays a hero transition between a small blue card and a large orange one (position, size, corner radius and colors interpolated), while the title's font size tweens along.
 - **`DEMO_TwoForms`** — two real forms in the same window: **Sign in** captures the avatar / user name / header states and the home form makes them fly to their new place on load; **Log out** plays the reverse flight.
 
@@ -77,5 +81,5 @@ End if
 
 - One `ElementTransition` instance per form; all calls must be made **from that form's context** (the engine uses `SET TIMER`, which targets the current form), and the `On Timer` event must be enabled.
 - Colors are interpolated in RGB by default; pass `colorMode: "hsv"` to keep in-between tones of distant hues vivid ([details](Documentation/Classes/ElementState.md#colors)).
-- Corner radius only animates between two **rectangle** objects; 4D form objects have no opacity property, so cross-fades are approximated by color interpolation plus a visibility swap.
+- Corner radius animates on the objects 4D gives one to — **rectangles, inputs and text areas** — and only when both keyframes have one; otherwise it snaps at the end. 4D form objects have no opacity property, so cross-fades are approximated by color interpolation plus a visibility swap.
 

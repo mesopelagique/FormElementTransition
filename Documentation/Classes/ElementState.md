@@ -29,7 +29,7 @@ Instances are JSON-serializable, so a snapshot can be persisted (see [`ElementTr
 |**.width**<br>**.height**| Width & height, calculated from the coordinates | `Real` |<font color="red">x</font>
 |**.fontSize**| Font size in points (`0` when not relevant) | `Real` |<font color="green">✓</font>
 |**.foregroundColor**<br>**.backgroundColor**| RGB colors as `0x00RRGGBB` longints; negative values are automatic/system colors | `Integer` |<font color="green">✓</font>
-|**.cornerRadius**| Corner radius in pixels; `-1` when the object is not a rectangle | `Real` |<font color="green">✓</font>
+|**.cornerRadius**| Corner radius in pixels; `-1` when the object has none | `Real` |<font color="green">✓</font>
 |**.visible**| Visibility of the object when captured (informative — `apply()` does not change visibility) | `Boolean` |<font color="green">✓</font>
 
 ## <a name="Functions">Functions</a>
@@ -62,7 +62,7 @@ Reads the current geometry, font size, colors, corner radius and visibility of t
 
 ### Description
 
-Returns a new state interpolated between `This` (*t* = 0) and *target* (*t* = 1). Geometry and font size are interpolated linearly; corner radius only when both states have one (both objects are rectangles), otherwise it snaps at the end.
+Returns a new state interpolated between `This` (*t* = 0) and *target* (*t* = 1). Geometry and font size are interpolated linearly; corner radius only when both states have one, otherwise it snaps at the end.
 
 ## <a name="colors">Color interpolation</a>
 
@@ -80,4 +80,10 @@ Automatic/system colors (negative values) are never interpolated: they snap at m
 
 ### Description
 
-Applies the state to a form object: coordinates, font size (when > 0), colors (when at least one is ≥ 0) and corner radius (when ≥ 0 **and** the target object is a rectangle). Visibility is intentionally not touched. Returns `This`.
+Applies the state to a form object: coordinates, font size (when > 0), colors (when at least one is ≥ 0) and corner radius (when ≥ 0 **and** the target object can have one). Visibility is intentionally not touched. Returns `This`.
+
+## <a name="radius">Which objects have a corner radius</a>
+
+The ones `OBJECT SET CORNER RADIUS` accepts: **rectangles**, **inputs** and **text areas** (the last two in project databases only). Anything else captures `-1` and is left alone.
+
+For inputs and text areas, 4D only honours the radius with a `none`, `solid` or `dotted` border style. Nothing to watch out for, though: an object with another style simply reports no radius, so it is captured as `-1` like any other.

@@ -128,6 +128,12 @@ Function _resolveState($source) : cs.ElementState
 			// Plain object: current state of the target overridden by the given properties
 			var $state:=cs.ElementState.new(This.target)
 
+			// Remember the size before any edge moves: .to({left: x}) reads as "move
+			// there", not "drag the left edge and leave the right one behind" — which
+			// would resize the object, or invert it outright when moving right
+			var $width : Real:=$state.width
+			var $height : Real:=$state.height
+
 			If (Not(Undefined($source.left)))
 				$state.left:=Num($source.left)
 			End if
@@ -144,13 +150,35 @@ Function _resolveState($source) : cs.ElementState
 				$state.bottom:=Num($source.bottom)
 			End if
 
-			If (Not(Undefined($source.width)))
-				$state.right:=$state.left+Num($source.width)
-			End if
+			Case of
 
-			If (Not(Undefined($source.height)))
-				$state.bottom:=$state.top+Num($source.height)
-			End if
+					//______________________________________________________
+				: (Not(Undefined($source.width)))
+
+					$state.right:=$state.left+Num($source.width)
+
+					//______________________________________________________
+				: (Not(Undefined($source.left))) && (Undefined($source.right))
+
+					$state.right:=$state.left+$width  // moved, so carry the width along
+
+					//______________________________________________________
+			End case
+
+			Case of
+
+					//______________________________________________________
+				: (Not(Undefined($source.height)))
+
+					$state.bottom:=$state.top+Num($source.height)
+
+					//______________________________________________________
+				: (Not(Undefined($source.top))) && (Undefined($source.bottom))
+
+					$state.bottom:=$state.top+$height
+
+					//______________________________________________________
+			End case
 
 			If (Not(Undefined($source.fontSize)))
 				$state.fontSize:=Num($source.fontSize)
@@ -336,6 +364,12 @@ Function _ease($t : Real) : Real
 		: (This.easingName="easeInOutCubic")
 
 			return ($t<0.5) ? (4*$t*$t*$t) : (1-((((-2*$t)+2)^3)/2))
+
+			//______________________________________________________
+		: (This.easingName="easeInBack")
+
+			// Winds up backwards before leaving — the mirror of easeOutBack
+			return ((1.70158+1)*$t*$t*$t)-(1.70158*$t*$t)
 
 			//______________________________________________________
 		: (This.easingName="easeOutBack")

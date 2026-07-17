@@ -25,6 +25,16 @@ The animation is driven by `ElementTransition.onTimer()`; it interpolates geomet
 
 If `.from()` is omitted, the current state of the target is captured when the animation starts.
 
+**Edges vs. moves.** Giving `left` without `right` or `width` is a **move**: the object keeps its size and travels there. Same for `top` on its own. Give `right`/`bottom` (or `width`/`height`) as well and you are setting the edges explicitly, which resizes.
+
+```4d
+.to({left: 300})              // moves; the width comes along
+.to({left: 300; width: 80})   // moves and resizes
+.to({left: 300; right: 380})  // both edges, stated outright
+```
+
+See it in `DEMO_Playground`.
+
 # Summary
 
 ## <a name="Properties">Properties</a>
@@ -62,6 +72,7 @@ Every function returns the animation itself, so calls can be chained.
 | `linear` | Constant speed |
 | `easeInQuad` / `easeOutQuad` / `easeInOutQuad` | Gentle acceleration / deceleration |
 | `easeInCubic` / `easeOutCubic` / `easeInOutCubic` | Stronger acceleration / deceleration (default: `easeInOutCubic`) |
+| `easeInBack` | Winds up backwards before leaving |
 | `easeOutBack` / `easeInOutBack` | Overshoots slightly past the target, then settles |
 | `easeOutElastic` | Springs around the target |
 | `easeOutBounce` | Bounces on arrival |

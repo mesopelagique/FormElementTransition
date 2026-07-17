@@ -1,0 +1,712 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "fixed",
+	"windowSizingY": "fixed",
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onTimer",
+		"onClick",
+		"onUnload"
+	],
+	"windowTitle": "FormElementTransition — playground",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"title": {
+					"type": "text",
+					"text": "Every knob, in one form",
+					"left": 20,
+					"top": 16,
+					"width": 420,
+					"height": 28,
+					"fontSize": 19,
+					"fontWeight": "bold",
+					"stroke": "automatic"
+				},
+				"subtitle": {
+					"type": "text",
+					"text": "Each marker below is one ElementAnimation. Click Run.",
+					"left": 20,
+					"top": 44,
+					"width": 460,
+					"height": 18,
+					"fontSize": 11,
+					"stroke": "#8A929C"
+				},
+				"panelA": {
+					"type": "rectangle",
+					"left": 20,
+					"top": 74,
+					"width": 400,
+					"height": 386,
+					"borderRadius": 8,
+					"fill": "#F7F8FA",
+					"stroke": "#E1E5EA"
+				},
+				"labelA": {
+					"type": "text",
+					"text": ".easing( … ) — same distance, same duration",
+					"left": 32,
+					"top": 82,
+					"width": 376,
+					"height": 16,
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"stroke": "#2B3440"
+				},
+				"lbl_1": {
+					"type": "text",
+					"text": "linear",
+					"left": 32,
+					"top": 108,
+					"width": 108,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"track_1": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 113,
+					"width": 252,
+					"height": 2,
+					"fill": "#E1E5EA",
+					"stroke": "#E1E5EA"
+				},
+				"mark_1": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 106,
+					"width": 22,
+					"height": 15,
+					"borderRadius": 7,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"lbl_2": {
+					"type": "text",
+					"text": "easeInQuad",
+					"left": 32,
+					"top": 137,
+					"width": 108,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"track_2": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 142,
+					"width": 252,
+					"height": 2,
+					"fill": "#E1E5EA",
+					"stroke": "#E1E5EA"
+				},
+				"mark_2": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 135,
+					"width": 22,
+					"height": 15,
+					"borderRadius": 7,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"lbl_3": {
+					"type": "text",
+					"text": "easeOutQuad",
+					"left": 32,
+					"top": 166,
+					"width": 108,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"track_3": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 171,
+					"width": 252,
+					"height": 2,
+					"fill": "#E1E5EA",
+					"stroke": "#E1E5EA"
+				},
+				"mark_3": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 164,
+					"width": 22,
+					"height": 15,
+					"borderRadius": 7,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"lbl_4": {
+					"type": "text",
+					"text": "easeInOutQuad",
+					"left": 32,
+					"top": 195,
+					"width": 108,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"track_4": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 200,
+					"width": 252,
+					"height": 2,
+					"fill": "#E1E5EA",
+					"stroke": "#E1E5EA"
+				},
+				"mark_4": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 193,
+					"width": 22,
+					"height": 15,
+					"borderRadius": 7,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"lbl_5": {
+					"type": "text",
+					"text": "easeInCubic",
+					"left": 32,
+					"top": 224,
+					"width": 108,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"track_5": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 229,
+					"width": 252,
+					"height": 2,
+					"fill": "#E1E5EA",
+					"stroke": "#E1E5EA"
+				},
+				"mark_5": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 222,
+					"width": 22,
+					"height": 15,
+					"borderRadius": 7,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"lbl_6": {
+					"type": "text",
+					"text": "easeOutCubic",
+					"left": 32,
+					"top": 253,
+					"width": 108,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"track_6": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 258,
+					"width": 252,
+					"height": 2,
+					"fill": "#E1E5EA",
+					"stroke": "#E1E5EA"
+				},
+				"mark_6": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 251,
+					"width": 22,
+					"height": 15,
+					"borderRadius": 7,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"lbl_7": {
+					"type": "text",
+					"text": "easeInOutCubic",
+					"left": 32,
+					"top": 282,
+					"width": 108,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"track_7": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 287,
+					"width": 252,
+					"height": 2,
+					"fill": "#E1E5EA",
+					"stroke": "#E1E5EA"
+				},
+				"mark_7": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 280,
+					"width": 22,
+					"height": 15,
+					"borderRadius": 7,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"lbl_8": {
+					"type": "text",
+					"text": "easeInBack",
+					"left": 32,
+					"top": 311,
+					"width": 108,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"track_8": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 316,
+					"width": 252,
+					"height": 2,
+					"fill": "#E1E5EA",
+					"stroke": "#E1E5EA"
+				},
+				"mark_8": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 309,
+					"width": 22,
+					"height": 15,
+					"borderRadius": 7,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"lbl_9": {
+					"type": "text",
+					"text": "easeOutBack",
+					"left": 32,
+					"top": 340,
+					"width": 108,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"track_9": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 345,
+					"width": 252,
+					"height": 2,
+					"fill": "#E1E5EA",
+					"stroke": "#E1E5EA"
+				},
+				"mark_9": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 338,
+					"width": 22,
+					"height": 15,
+					"borderRadius": 7,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"lbl_10": {
+					"type": "text",
+					"text": "easeInOutBack",
+					"left": 32,
+					"top": 369,
+					"width": 108,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"track_10": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 374,
+					"width": 252,
+					"height": 2,
+					"fill": "#E1E5EA",
+					"stroke": "#E1E5EA"
+				},
+				"mark_10": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 367,
+					"width": 22,
+					"height": 15,
+					"borderRadius": 7,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"lbl_11": {
+					"type": "text",
+					"text": "easeOutElastic",
+					"left": 32,
+					"top": 398,
+					"width": 108,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"track_11": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 403,
+					"width": 252,
+					"height": 2,
+					"fill": "#E1E5EA",
+					"stroke": "#E1E5EA"
+				},
+				"mark_11": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 396,
+					"width": 22,
+					"height": 15,
+					"borderRadius": 7,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"lbl_12": {
+					"type": "text",
+					"text": "easeOutBounce",
+					"left": 32,
+					"top": 427,
+					"width": 108,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"track_12": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 432,
+					"width": 252,
+					"height": 2,
+					"fill": "#E1E5EA",
+					"stroke": "#E1E5EA"
+				},
+				"mark_12": {
+					"type": "rectangle",
+					"left": 144,
+					"top": 425,
+					"width": 22,
+					"height": 15,
+					"borderRadius": 7,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"panelB": {
+					"type": "rectangle",
+					"left": 440,
+					"top": 74,
+					"width": 300,
+					"height": 118,
+					"borderRadius": 8,
+					"fill": "#F7F8FA",
+					"stroke": "#E1E5EA"
+				},
+				"labelB": {
+					"type": "text",
+					"text": "colorMode — identical endpoints, different path",
+					"left": 452,
+					"top": 82,
+					"width": 276,
+					"height": 16,
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"stroke": "#2B3440"
+				},
+				"swRgb": {
+					"type": "rectangle",
+					"left": 452,
+					"top": 106,
+					"width": 130,
+					"height": 46,
+					"borderRadius": 6,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"swRgbLbl": {
+					"type": "text",
+					"text": "rgb (muddy middle)",
+					"left": 452,
+					"top": 158,
+					"width": 130,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"swHsv": {
+					"type": "rectangle",
+					"left": 594,
+					"top": 106,
+					"width": 130,
+					"height": 46,
+					"borderRadius": 6,
+					"fill": "#4DA3FF",
+					"stroke": "#2B6CB0"
+				},
+				"swHsvLbl": {
+					"type": "text",
+					"text": "hsv (stays vivid)",
+					"left": 594,
+					"top": 158,
+					"width": 130,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"panelC": {
+					"type": "rectangle",
+					"left": 440,
+					"top": 204,
+					"width": 300,
+					"height": 174,
+					"borderRadius": 8,
+					"fill": "#F7F8FA",
+					"stroke": "#E1E5EA"
+				},
+				"labelC": {
+					"type": "text",
+					"text": "…and what it interpolates",
+					"left": 452,
+					"top": 212,
+					"width": 276,
+					"height": 16,
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"stroke": "#2B3440"
+				},
+				"pMoveLbl": {
+					"type": "text",
+					"text": "position",
+					"left": 452,
+					"top": 236,
+					"width": 70,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"pMove": {
+					"type": "rectangle",
+					"left": 530,
+					"top": 234,
+					"width": 18,
+					"height": 18,
+					"borderRadius": 9,
+					"fill": "#30A46C",
+					"stroke": "#1F7A4C"
+				},
+				"pSizeLbl": {
+					"type": "text",
+					"text": "size",
+					"left": 452,
+					"top": 266,
+					"width": 70,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"pSize": {
+					"type": "rectangle",
+					"left": 530,
+					"top": 262,
+					"width": 24,
+					"height": 22,
+					"borderRadius": 4,
+					"fill": "#F76B15",
+					"stroke": "#B04A0C"
+				},
+				"pRadiusLbl": {
+					"type": "text",
+					"text": "cornerRadius",
+					"left": 452,
+					"top": 300,
+					"width": 70,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"pRadius": {
+					"type": "rectangle",
+					"left": 530,
+					"top": 296,
+					"width": 40,
+					"height": 40,
+					"borderRadius": 2,
+					"fill": "#E5484D",
+					"stroke": "#A02328"
+				},
+				"pFontLbl": {
+					"type": "text",
+					"text": "fontSize",
+					"left": 452,
+					"top": 348,
+					"width": 70,
+					"height": 14,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				},
+				"pFont": {
+					"type": "text",
+					"text": "Aa",
+					"left": 530,
+					"top": 342,
+					"width": 100,
+					"height": 26,
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"stroke": "#2B3440"
+				},
+				"panelD": {
+					"type": "rectangle",
+					"left": 440,
+					"top": 390,
+					"width": 300,
+					"height": 88,
+					"borderRadius": 8,
+					"fill": "#F7F8FA",
+					"stroke": "#E1E5EA"
+				},
+				"labelD": {
+					"type": "text",
+					"text": ".delay( … ) — one tween, six starts",
+					"left": 452,
+					"top": 398,
+					"width": 276,
+					"height": 16,
+					"fontSize": 11,
+					"fontWeight": "bold",
+					"stroke": "#2B3440"
+				},
+				"dot_1": {
+					"type": "rectangle",
+					"left": 454,
+					"top": 420,
+					"width": 14,
+					"height": 14,
+					"borderRadius": 7,
+					"fill": "#8A5CF6",
+					"stroke": "#6D3FD1"
+				},
+				"dot_2": {
+					"type": "rectangle",
+					"left": 474,
+					"top": 420,
+					"width": 14,
+					"height": 14,
+					"borderRadius": 7,
+					"fill": "#8A5CF6",
+					"stroke": "#6D3FD1"
+				},
+				"dot_3": {
+					"type": "rectangle",
+					"left": 494,
+					"top": 420,
+					"width": 14,
+					"height": 14,
+					"borderRadius": 7,
+					"fill": "#8A5CF6",
+					"stroke": "#6D3FD1"
+				},
+				"dot_4": {
+					"type": "rectangle",
+					"left": 514,
+					"top": 420,
+					"width": 14,
+					"height": 14,
+					"borderRadius": 7,
+					"fill": "#8A5CF6",
+					"stroke": "#6D3FD1"
+				},
+				"dot_5": {
+					"type": "rectangle",
+					"left": 534,
+					"top": 420,
+					"width": 14,
+					"height": 14,
+					"borderRadius": 7,
+					"fill": "#8A5CF6",
+					"stroke": "#6D3FD1"
+				},
+				"dot_6": {
+					"type": "rectangle",
+					"left": 554,
+					"top": 420,
+					"width": 14,
+					"height": 14,
+					"borderRadius": 7,
+					"fill": "#8A5CF6",
+					"stroke": "#6D3FD1"
+				},
+				"buttonRun": {
+					"type": "button",
+					"text": "Run",
+					"left": 20,
+					"top": 492,
+					"width": 90,
+					"height": 28,
+					"stroke": "automatic",
+					"events": [
+						"onClick"
+					]
+				},
+				"readout": {
+					"type": "text",
+					"text": "",
+					"left": 124,
+					"top": 497,
+					"width": 616,
+					"height": 18,
+					"fontSize": 11,
+					"stroke": "#8A929C"
+				},
+				"code": {
+					"type": "text",
+					"text": "Form.transition.animate(\"mark_1\").to({left: 300}).duration(1200).easing(\"easeOutBack\").start()",
+					"left": 20,
+					"top": 528,
+					"width": 720,
+					"height": 18,
+					"fontSize": 11,
+					"fontFamily": "monospace",
+					"stroke": "automatic"
+				},
+				"note": {
+					"type": "text",
+					"text": "share() and morph() have their own demo: run the DEMO method.",
+					"left": 20,
+					"top": 552,
+					"width": 500,
+					"height": 16,
+					"fontSize": 10,
+					"stroke": "#8A929C"
+				}
+			}
+		}
+	],
+	"method": "method.4dm",
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

@@ -50,8 +50,7 @@ Function capture() : cs.ElementState
 	This.foregroundColor:=$foreground
 	This.backgroundColor:=$background
 
-	// Corner radius is only defined for rectangles
-	This.cornerRadius:=(This.type=Object type rectangle) ? OBJECT Get corner radius(*; This.name) : -1
+	This.cornerRadius:=This._hasCornerRadius(This.type) ? OBJECT Get corner radius(*; This.name) : -1
 
 	return This
 
@@ -137,13 +136,29 @@ Function apply($name : Text) : cs.ElementState
 
 	End if
 
-	If ((This.cornerRadius>=0) && (OBJECT Get type(*; $name)=Object type rectangle))
+	If ((This.cornerRadius>=0) && (This._hasCornerRadius(OBJECT Get type(*; $name))))
 
 		OBJECT SET CORNER RADIUS(*; $name; Round(This.cornerRadius; 0))
 
 	End if
 
 	return This
+
+	// === === === === === === === === === === === === === === === === === === === === === === === === === ===
+/*
+Which objects own a corner radius, per OBJECT SET CORNER RADIUS: rectangles,
+inputs and text areas (the last two in project databases only).
+
+For inputs and text areas 4D only honours the radius with a "none", "solid" or
+"dotted" border style. There is nothing to test for here though: an object with
+another style simply reports no radius, so it is captured as -1 and left alone.
+*/
+Function _hasCornerRadius($type : Integer) : Boolean
+
+	return ($type=Object type rectangle)\
+		 | ($type=Object type rounded rectangle)\
+		 | ($type=Object type text input)\
+		 | ($type=Object type static text)
 
 	// === === === === === === === === === === === === === === === === === === === === === === === === === ===
 Function _lerpValue($from : Real; $to : Real; $t : Real) : Real
