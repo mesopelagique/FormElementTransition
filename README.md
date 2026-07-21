@@ -6,7 +6,7 @@ Animate a form object from one visual state to another — position, size, color
 
 ![demo](https://img.shields.io/badge/4D-v21%2B-blue)
 
-https://github.com/user-attachments/assets/5715d3e7-ef76-4474-88f5-6880873be8c2
+<p align="center"><img width="636" height="518" alt="TransitionForm" src="https://github.com/user-attachments/assets/54be9a94-224d-4d93-8c08-f7891a687331" /></p>
 
 ## Classes
 
@@ -72,7 +72,7 @@ End if
 
 - **`DEMO_Playground`** — every knob, in one form. Click **Run**: the twelve [easing curves](Documentation/Classes/ElementAnimation.md#easing) race side by side over the same distance and the same duration, so you can actually *see* the difference; two swatches take the same blue → orange journey in `rgb` and in `hsv`; position, size, `cornerRadius` and `fontSize` each get a demo; and six dots stagger with `.delay()`. Click **Back**: the state `capture()`d on load *is* the destination — `.to($elementState)`, no coordinates written anywhere.
 
-<p align="center"><img src="Project/Sources/Forms/DEMO_Playground/form.png" width="560" alt="The playground demo form" /></p>
+<p align="center"><img width="800" height="638" alt="Playground" src="https://github.com/user-attachments/assets/88e3f62b-256b-47ac-999e-f1db7da4bb71" /></p>
 
 - **`DEMO`** — single form: each click on **Toggle** plays a hero transition between a small blue card and a large orange one (position, size, corner radius and colors interpolated), while the title's font size tweens along.
 - **`DEMO_TwoForms`** — two real forms in the same window: **Sign in** captures the avatar / user name / header states and the home form makes them fly to their new place on load; **Log out** plays the reverse flight.
